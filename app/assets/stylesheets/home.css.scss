@@ -1,0 +1,70 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#main{
+  margin: 0 auto;
+  padding-top: 30px;
+  height:70%;
+}
+
+#title{
+    background: none repeat scroll 0 0 #E5DCAA;
+    border: 2px solid #FCF5AE;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 1px 5px 6px #777777;
+    color: #6E6B4C;
+    margin: 0 auto;
+    text-align: center;
+    width: 70%;
+}
+
+#title h1{
+  color: #363425;
+}
+
+#search{
+  margin: 0 auto;
+  margin-top: 50px;
+  padding-top:5px;
+  width: 50%;
+  height: 100px;
+  background: #D1C2E5;
+  border: 2px solid #8980A8;
+  vertical-align:middle;
+  border-radius:5px;
+  box-shadow: 1px 2px 3px #999;
+}
+.instruction{
+    display: inline;
+    color:#777;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: normal;
+    padding-left: 4px;
+    position: relative;
+    text-align: left;
+}
+#search form{
+  // margin-top: 8%;
+}
+#search input{
+  vertical-align:middle;
+}
+#teh_search {
+  font-size:16px;
+  line-height:24px;
+}
+
+#sign-up{
+  margin: 0 auto;
+  margin-top: 50px;
+  padding:5px;
+  width: 50%;
+  height: auto;
+  background: #D1C2E5;
+  border: 2px solid #8980A8;
+  vertical-align:middle;
+  border-radius:5px;
+  box-shadow: 1px 2px 3px #999;
+}

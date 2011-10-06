@@ -1,0 +1,57 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require css3buttons/without-reset
+ *= require_self
+ *= require_tree . 
+*/
+
+a{
+  color: #9F1DFF;
+  text-decoration:none;
+}
+a:visited {
+  color: #6126E8;
+}
+a:hover {
+  color: #A41CF5;
+  text-decoration:underline;
+};
+
+body {
+  background: none repeat scroll 0 0 #333333;
+}
+
+nav {
+  float:right;
+}
+
+
+#wrapper{
+  margin: #FFF;
+  margin: 0 auto;
+  padding-top:5px;
+  text-align:center;
+  vertical-align:middle;
+  width:  768px;
+  height: 1024px;
+  background: none repeat scroll 0 0 #FFFFFF;
+  border: 1px solid black;
+}
+
+
+
+
+
+footer {
+  font-weight:bold;
+  color:#999;
+  text-align:center;
+}
+
+footer a {
+  font-size:10px;
+}
+  

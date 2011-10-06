@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Wizarding Registry</title>
+    <%= stylesheet_link_tag  "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div id="wrapper">
+        
+        <% flash.each do |key, value| -%>
+          <div class="flash <%= key %>"><%= value %></div>
+        <% end -%>
+        
+        <nav>
+          <div class="button-group">
+            <%= link_to('Home', root_path, :class => "button primary") %>
+              <% if user_signed_in? %>
+              <%= link_to('Edit Account', edit_user_registration_path, :class => "button edit") %>
+                <%= link_to('Edit Profile', {:controller => "users", :action => "edit", :id => current_user.name}, :class => "button edit") %>
+                <% else %>
+                <%= link_to('Sign-up', new_user_registration_path, :class => "button user primary")  %>
+                <% end %>
+                <% if user_signed_in? %>
+                <%= link_to('Logout', destroy_user_session_path, :method => :delete, :class => "button remove danger") %>
+                <% else %>
+                <%= link_to('Login', new_user_session_path, :class => "button edit")  %>  
+                <% end %>
+            </div>
+        </nav>
+        
+        <div id="main">
+          <%= yield %>
+        </div>
+        
+        <footer>
+            <%= link_to "About", about_path %>
+            - 
+            <%= link_to "Contact", contact_path %>
+            - 
+            <%= link_to "Me", "http://justinherrick.com/", :class => "" %>             
+        </footer>
+    </div>
+    <%= javascript_include_tag "application" %>
+  </body>
+</html>

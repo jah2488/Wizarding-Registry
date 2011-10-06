@@ -1,0 +1,11 @@
+development: &default
+  host: localhost
+  adapter: postgresql
+  database: wizard_development
+  pool: 5
+  timeout: 5000
+
+test: &TEST
+  <<: *default
+  database: wizard_test
+  min_messages: warning

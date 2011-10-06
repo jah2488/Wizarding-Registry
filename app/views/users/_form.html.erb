@@ -1,0 +1,41 @@
+<%= simple_form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <h2> Wizard Info</h2>
+  <hr>
+  <%= f.input :bio %>
+  <%= f.input :pet, :collection => ["Cat", "Frog", "Owl"] %>
+ <hr>
+ <h2>Wand Info</h2>
+ <hr>
+  <%= f.input :wand_tree, :collection => %w[Acacia Alder Apple Ash Aspen Beech Blackthorn Cedar Cherry Chestnut Cypress Dogwood Ebony Elder Elm Fir Hawthorn Hazel Holly Hornbeam Maple Oak Pear Pine Poplar Redwood Rosewood Rowan SilverLime Spruce Sycamore Vine Walnut Willow Yew] %>
+  <%= f.input :wand_core, :collection => ["Dragon Heartstring", "Phoenix Feather", "Unicorn Tail Hair", "Veela Hair", "Thestral Hair"] %>
+  <%= f.input :wand_length, :as => :float %>
+  <%= f.input :wand_spec, :collection => ["Springy", "Surpringly Swift", "Unyielding", "Other"] %>
+<hr>
+ <h2>House Info</h2>
+<hr>
+  <%= f.input :house, :collection => ["Slytherin", "Gryfindor", "Hufflepuff","Ravenclaw"] %>
+  <%= f.input :house_points, :as => :integer %>
+  <hr>
+  <h2>Social</h2>
+  <hr>
+  <%= f.input :facebook, :hint => "We can figure out the 'facebook.com' part, just leave your url slug" %>
+  <%= f.input :twitter, :placeholder => "We can figure out the 'twitter.com' part, just leave your url slug"  %>
+  <%= f.input :skype    %>
+  <%= f.input :aim      %>
+  <%= f.input :site     %>
+  <div class="actions">
+    <%= f.input :password %>
+    <%= f.submit %>
+  </div>
+<% end %>

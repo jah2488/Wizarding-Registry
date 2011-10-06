@@ -1,0 +1,27 @@
+<div id="title">
+	<h1>Wizarding Registry</h1>
+	<p>Ministry of Muggle Wizard Relations</p>
+</div>
+<section>
+  <div id="search">
+    <div class="instruction">Find a fellow wizard<br/>(Search by Pottermore Name or Email)</div>
+		<%= form_tag search_path, :method => :get do %>
+		  <p>
+		    <%= text_field_tag :search, params[:search], :placeholder => "PatronusBlade141", :id => "teh_search" %>
+		    <%= submit_tag "Search", :name => nil, :class => "big primary button icon search" %>
+		  </p>
+		<% end %>
+  </div>
+    <div id="sign-up">
+      <div class="instruction">Add yourself to the Registry<br/>(Add your name, email, and add a password)</div>
+
+		  <%= simple_form_for @user, :validate => true do |f| %>
+		      <%= f.input :name, :placeholder => "Your Pottermore Name (PatronusBlade141)"  %>
+		      <%= f.input :email, :placeholder => "Your Email (myemail@gmail.com)" %>
+		      <%= f.input :password, :placeholder => "A good password" %>
+		      <%= f.input :password_confirmation, :placeholder => "Repeat that password" %>
+		      <%= f.submit :class => "big button" %>
+		  <% end %>
+	  </div>
+  </div>
+</section>
