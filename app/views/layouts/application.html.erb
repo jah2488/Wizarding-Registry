@@ -1,11 +1,55 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html
+              xmlns:og="http://ogp.me/ns#
+              xmlns:fb="https://www.facebook.com/2008/fbml">
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en" itemscope itemtype="http://schema.org/Person"> <!--<![endif]-->
   <head>
-    <title>Wizarding Registry</title>
+    <meta charset="utf-8">
+    <title><%= @title.to_s.titleize %>  Wizarding Registry</title>
     <%= stylesheet_link_tag  "application" %>
     <%= csrf_meta_tags %>
+
+    <!-- Twitter's @Anywhere API Call -->
+    <script src="http://platform.twitter.com/anywhere.js?id=2tGmDVTJKjUyRpKRZNi2xw&v=1" type="text/javascript"></script>
+
+    <!-- FB Open Graph Meta Tags -->
+    <meta property="og:title" content="Wizarding Registry - #{@title}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= current_url %>" />
+    <meta property="og:image" content="http://25.media.tumblr.com/tumblr_lsqe4z3H5e1qbfb1qo1_100.png" />
+    <meta property="og:site_name" content="Wizarding Registry" />
+    <meta property="fb:admins" content="290400813" />
+
+    <!-- IE9 Pinned Sites Meta Data -->
+    <meta name="application-name" content="Wizarding Registry" />
+    <meta name="msapplication-tooltip" content="Simply the most awesome way to find users on Pottermore and also find Pottermore from users." />
+    <meta name="msapplication-starturl" content="http://wizardingregistry.heroku.com/?pinned=true" />
+    <meta name="msapplication-task" content="name=Home;action-uri=http://wizardingregistry.heroku.com;" />
+    <!-- END IE9 Pinned Sites Meta Data -->
+    <meta name="description" content="Simply the most awesome way to find users on Pottermore and also find Pottermore from users.">
+    <meta name="author" content="Justin Herrick | JAH2488">
+        
+    <!-- Add the following three tags inside head -->
+    <meta itemprop="name" content="#{ current_user.name.to_s }">
+    <meta itemprop="description" content="My Wizarding Registry Profile">
+
+    <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="imagetoolbar" content="false" />
+
+    <!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   </head>
   <body>
+    <script type="text/javascript">
+      twttr.anywhere(function (T) {
+        T.linkifyUsers();
+      });
+    </script>
     <div id="wrapper">
         
         <% flash.each do |key, value| -%>
@@ -16,8 +60,8 @@
           <div class="button-group">
             <%= link_to('Home', root_path, :class => "button primary") %>
               <% if user_signed_in? %>
-              <%= link_to('Edit Account', edit_user_registration_path, :class => "button edit") %>
-                <%= link_to('Edit Profile', {:controller => "users", :action => "edit", :id => current_user.name}, :class => "button edit") %>
+                <%= link_to('Edit Account', edit_user_registration_path, :class => "button edit") %>
+                <%= link_to('My Profile', {:controller => "users", :action => "show", :id => current_user.name}, :class => "button edit") %>
                 <% else %>
                 <%= link_to('Sign-up', new_user_registration_path, :class => "button user primary")  %>
                 <% end %>
@@ -42,5 +86,20 @@
         </footer>
     </div>
     <%= javascript_include_tag "application" %>
+
+
+  <!--[if lt IE 7 ]>
+  <script src="js/libs/dd_belatedpng.js"></script>
+  <script>DD_belatedPNG.fix('img, .png_bg'); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb </script>
+  <![endif]-->
+
+
+  <!-- mathiasbynens.be/notes/async-analytics-snippet Change UA-XXXXX-X to be your site's ID -->
+  <script>
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
   </body>
 </html>

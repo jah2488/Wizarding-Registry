@@ -1,22 +1,42 @@
-<p id="notice"><%= notice %></p>
+<%= link_to "Edit Profile", edit_user_path(@user), :class => "big button edit" if has_permission? %>
 <div id="profile">
 	
 	<div id="account">
-		<%= @user.name %>
-		<%= @user.house %>
-		<%= @user.house_points %>
-		<%= @user.pet %>
-		<hr><h2>Wand</h2></hr>
-		<%=  @user.wand_tree.to_s + " with " + @user.wand_core.to_s + ", " + pluralize(@user.wand_length, "Inches") + " Long, and " + @user.wand_spec.to_s %>
+		<div id="icon">
+			<%= @user.pet %>
+		</div>
+		<div id="name">			
+			<%= @user.name %>
+		</div>
+		<div id="house-points">
+			<%= @user.house_points %>
+		</div>
+		<div id="house">
+				<%= @user.house %>
+		</div>
 	</div>
+	<div class="clearfix"></div>
 
 	<div id="social">
-		<%= link_to @user.twitter %>
-		<%= link_to @user.tumblr  %>
-		<%= link_to @user.site    %>
+		<%= link_to "Twitter" , "http://twitter.com/#{@user.twitter.to_s}"    %>
+		<%= link_to "Tumblr"  , "http://#{@user.tumblr.to_s}.tumblr.com"      %>
+		<%= link_to "Facebook", "http://facebook.com/#{@user.facebook.to_s}"  %>
 	</div>
+
+	<div id="wand">
+		<h2>Wand</h2>
+		<hr>
+		<%=  @user.wand_tree.to_s %>
+		<p> with </p>
+		<%=  @user.wand_core.to_s %>
+		<%= pluralize(@user.wand_length, "Inches") + " Long," %> 
+		<p> and </p> 
+		<%= @user.wand_spec.to_s %>
+	</div>
+	<div class="clearfix"></div>
+
+	<%= render :partial => "home/share" %>
+
+
 </div>
-<% if current_user %>
-  <%= link_to 'Edit', edit_user_path(@user) if current_user.id == @user.id %> |
-<% end %>
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', users_path, :class= => "button" %>
