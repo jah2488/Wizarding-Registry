@@ -32,10 +32,12 @@
 		<%= pluralize(@user.wand_length, "Inches") + " Long," %> 
 		<p> and </p> 
 		<%= @user.wand_spec.to_s %>
+
+		<%= render :partial => "home/share" %>
+
 	</div>
 	<div class="clearfix"></div>
 
-	<%= render :partial => "home/share" %>
 
 
 </div>

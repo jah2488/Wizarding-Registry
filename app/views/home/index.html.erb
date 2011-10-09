@@ -12,16 +12,44 @@
 		  </p>
 		<% end %>
   </div>
-    <div id="sign-up">
+  <div id="sign-up">
       <div class="instruction">Add yourself to the Registry<br/>(Add your name, email, and add a password)</div>
 
-		  <%= simple_form_for @user, :validate => true do |f| %>
-		      <%= f.input :name, :placeholder => "Your Pottermore Name (PatronusBlade141)"  %>
-		      <%= f.input :email, :placeholder => "Your Email (myemail@gmail.com)" %>
-		      <%= f.input :password, :placeholder => "A good password" %>
-		      <%= f.input :password_confirmation, :placeholder => "Repeat that password" %>
-		      <%= f.submit :class => "big button" %>
-		  <% end %>
-	  </div>
+      <div class="log-in-sign-in">
+      	<%= link_to "Login",  "#", :id => "login-js" , :class => "big button primary" %>
+      	<%= link_to "Signup", "#", :id => "signup-js", :class => "big button danger" %>
+      </div>
+
+      <div class="log-in">
+      	<h2>Sign in</h2>
+	  	<% SimpleForm.wrapper_tag = :p %>
+		<%= simple_form_for(@user, :url => session_path(@user)) do |f| %>
+		  <div class="inputs">
+		    <%= f.input :email, :required => false, :autofocus => true, :class => "input email"    %>
+		    <%= f.input :password, :required => false,                  :class => "input password" %>
+		    <%= f.input :remember_me, :as => :boolean %>
+ 		  </div>
+		  <div class="actions">
+    		<%= f.button :submit, "Sign in", :class => "big button primary" %>
+  		  </div>
+        <% end %>
+      </div>
+
+      <div class="sign-up">
+	  <%= simple_form_for @user, :validate => true do |f| %>
+	  	<div class="inputs">
+	      <%= f.input :name, :placeholder => "Your Pottermore Name",                  :class => "input name"     %>
+	      <%= f.input :email, :placeholder => "Your Email",                           :class => "input email"    %>
+	      <%= f.input :password, :placeholder => "A good password",                   :class => "input password" %>
+	      <%= f.input :password_confirmation, :placeholder => "Repeat that password", :class => "input password", :label => "Password" %>
+	    </div>
+	    <div class="actions">
+	      <%= f.submit :class => "big button primary" %>
+	    </div>
+	  <% end %>
+	  </div>  
   </div>
+</section>
+<section>
+	<%= render :partial => "share" %>
 </section>

@@ -7,6 +7,8 @@ gem 'rails', '3.1.0'
 
 gem 'tlsmail'
 
+gem 'thin'
+
 gem 'pg'
 
 gem 'devise'
@@ -30,7 +32,7 @@ gem 'css3buttons'
 gem 'bourbon'
 gem 'dynamic_form'
 gem 'simple_form'
-
+gem 'heroku'
 # Use unicorn as the web server
 # gem 'unicorn'
 
