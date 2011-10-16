@@ -4,40 +4,147 @@
 
 
 #profile {
+  margin-top:5px;
   border: 1px solid red;
 }
 
 #account {
   border: 1px solid green;
   width: 100%;
-  height: 200px;
+  height: 130px;
+
 
   #icon {
     border: 1px solid black;
-    float: left;
+    position: relative;
+    height: 22px;
     width: 100px;
-    height:100px;
+    margin-right: 10px;
+    left: 655px;
+    top: -42px;
   }
 
   #name {
     border: 1px solid black;
+    font-size: 36px;
     margin-left: 110px;
+    text-align: left;
+    width: 560px;
   }
   #house-points{
     border: 1px solid black;
-    float:right;
+    font-size: 24px;
+    text-align: center;
+    position: relative;
+    right: 0px;
+    width: 75px;
+    height: 100px;
+    left: 680px;
+    top: -47px;
   }
   #house {
     border: 1px solid black;
-    float:right;
+    float: left;
+    width: 107px;
+    height:120px;
+
+    &.gryffindor {
+      background: url("gryffindor.png") 0 0 no-repeat;
+    }
+    &.gryffindor:hover {
+      background: url("gryffindor.png") 0 -115px;
+    }
+    &.slytherin {
+      background: url("slytherin.png")  0 0;
+    }
+    &.slytherin:hover {
+      background: url("slytherin.png") 0 -115px;
+    }
+    &.ravenclaw {
+      background: url("ravenclaw.png")  0 0;
+    }
+    &.ravenclaw:hover {
+      background: url("ravenclaw.png") 0 -115px;
+    }
+    &.hufflepuff {
+      background: url("hufflepuff.png") 0 0 no-repeat;
+    }
+    &.hufflepuff:hover {
+      background: url("hufflepuff.png") 0 -115px;
+    }
   }
+}
+
+.slytherin {
+  background: green;
+}
+.gryffindor {
+  background: red;
+}
+.ravenclaw {
+  background: blue;
+}
+.hufflepuff {
+  background: yellow;
 }
 
 #social {
   border: 1px solid blue;
+  padding:5px;
   width: 69%;
   float:left;
-  height:auto;
+  height:500px;
+
+  #links{
+    margin: 80px auto;
+    width: 370px;
+  }
+
+  ul {
+    list-style:none;
+    float:left;
+    height:80px;
+  }
+  ul li {
+    float:right;
+    margin-left:10px;
+    width:95px
+  }
+
+  a {
+    padding-top: 50px;
+    padding-left: 65px;
+    &#twitter{
+      background: url("icons/twitter_dark.png") 0 0 no-repeat;
+    }
+    &#tumblr{
+      background: url("icons/tumblr_dark.png") 0 0 no-repeat;
+    }
+    &#facebook{
+      background: url("icons/facebook_dark.png") 0 0 no-repeat;
+    }
+    &#aim{
+      background: url("icons/aim_dark.png") 0 0 no-repeat;
+    }
+    &#skype{
+      background: url("icons/skype_dark.png") 0 0 no-repeat;
+    }
+    &#google{
+      background: url("icons/google_dark.png") 0 0 no-repeat;
+    }
+    &#youtube{
+      background: url("icons/youtube_dark.png") 0 0 no-repeat;
+    }
+    &#email{
+      background: url("icons/vcard_dark.png") 0 0 no-repeat;
+    }
+    &#site{
+      background: url("icons/netvibes_dark.png") 0 0 no-repeat;
+    }
+    &#site2{
+      background: url("icons/netvibes_dark.png") 0 0 no-repeat;
+    }
+  }
 }
 
 #wand {

@@ -60,7 +60,7 @@
           <div class="button-group">
             <%= link_to('Home', root_path, :class => "button primary") %>
               <% if user_signed_in? %>
-                <%= link_to('Edit Account', edit_user_registration_path, :class => "button edit") %>
+                <!-- <%= link_to('Edit Account', edit_user_registration_path, :class => "button edit") %> -->
                 <%= link_to('My Profile', {:controller => "users", :action => "show", :id => current_user.name}, :class => "button edit") %>
                 <% else %>
                 <%= link_to('Sign-up', new_user_registration_path, :class => "button user primary")  %>
@@ -93,13 +93,14 @@
   <script>DD_belatedPNG.fix('img, .png_bg'); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb </script>
   <![endif]-->
 
-
-  <!-- mathiasbynens.be/notes/async-analytics-snippet Change UA-XXXXX-X to be your site's ID -->
-  <script>
-    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
-    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g,s)}(document,'script'));
-  </script>
+  <% unless Rails.env.development? %>
+    <!-- mathiasbynens.be/notes/async-analytics-snippet Change UA-XXXXX-X to be your site's ID -->
+    <script>
+      var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+  <% end %>
   </body>
 </html>

@@ -6,7 +6,10 @@ WizardingRegistry::Application.routes.draw do
     get "/logout" => "devise/sessions#destroy"
   end
 
-  match '/user' => "home#index", :as => :user_root
+  devise_for :users , :controllers => { :registrations => "registrations" }
+
+
+  match '/user' => "home#index", :as => "/"
 
   resources :users
 

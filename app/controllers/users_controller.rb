@@ -2,10 +2,10 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @search = User.search { fulltext params[:search] }
-
-    @users = @search.results
-
+    # @search = User.search { fulltext params[:search] } #Sunspot Gem Call ; Not useable on heroku
+    # @users = @search.results
+    @search = User.search(params[:search])
+   
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @users }
@@ -60,6 +60,7 @@ class UsersController < ApplicationController
   # PUT /users/1
   # PUT /users/1.json
   def update
+    params[:user].delete(:password) if params[:user][:password].blank?
     @query = User.where(:name => (params[:name] || params[:id]))
     @user = @query.first
     respond_to do |format|

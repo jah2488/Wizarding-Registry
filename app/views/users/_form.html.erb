@@ -1,4 +1,4 @@
-<%= simple_form_for(@user) do |f| %>
+<%= simple_form_for @user, :validate => false do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -24,7 +24,7 @@
 <hr>
  <h2>House Info</h2>
 <hr>
-  <%= f.input :house, :collection => ["Slytherin", "Gryfindor", "Hufflepuff","Ravenclaw"] %>
+  <%= f.input :house, :collection => ["Slytherin", "Gryffindor", "Hufflepuff","Ravenclaw"] %>
   <%= f.input :house_points, :as => :integer %>
   <hr>
   <h2>Social</h2>
@@ -35,7 +35,6 @@
   <%= f.input :aim      %>
   <%= f.input :site     %>
   <div class="actions">
-    <%= f.input :password %>
     <%= f.submit %>
   </div>
 <% end %>

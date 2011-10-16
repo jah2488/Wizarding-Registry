@@ -1,7 +1,7 @@
 class SearchController < ApplicationController
   def index
-	@search = User.search { fulltext params[:search] }
-	@user   = @search.results
+	@search = User.search(params[:search])
+	@user = @search.first
 	if @user == []
   		redirect_to :back, :notice => "Wizard not Found"
   	else 
