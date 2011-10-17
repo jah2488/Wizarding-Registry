@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :real_name, :email, :password, :password_confirmation, :remember_me
-  attr_accessible :name, :bio, :twitter, :facebook, :skype, :aim, :site
+  attr_accessible :name, :bio, :tumblr, :twitter, :facebook, :skype, :aim, :site, :site2, :youtube, :google_plus
   attr_accessible :pet, :house, :house_points
   attr_accessible :wand_tree, :wand_length, :wand_core, :wand_spec
 
