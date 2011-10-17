@@ -180,6 +180,20 @@ a:hover { color: #036; }
 body{
   background: repeat url("subtle_orange_emboss.png");
 }
+#wrapper{
+  margin: 0 auto;
+  padding-top:5px;
+  text-align:center;
+  vertical-align:middle;
+  width:  768px;
+  height: 1024px;
+  background:repeat scroll 0 0 url("subtle_freckles.png");
+  border: 2px solid #999;
+  box-shadow: 2px 2px 6px #333;
+  border-radius: 2px;
+}
+
+
 
 input {
   width:200px;
@@ -279,9 +293,6 @@ a:hover {
   text-decoration:underline;
 };
 
-body {
-  background: none repeat scroll 0 0 #333333;
-}
 ul {
   list-style:none;
 }
@@ -337,20 +348,6 @@ h1{
   margin-top: 15px;
   text-align: center;
 }
-
-#wrapper{
-  margin: 0 auto;
-  padding-top:5px;
-  text-align:center;
-  vertical-align:middle;
-  width:  768px;
-  height: 1024px;
-  background:repeat scroll 0 0 url("subtle_freckles.png");
-  border: 2px solid #999;
-  box-shadow: 2px 2px 6px #333;
-  border-radius: 2px;
-}
-
 
 
 
