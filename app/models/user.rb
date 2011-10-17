@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   attr_accessible :pet, :house, :house_points
   attr_accessible :wand_tree, :wand_length, :wand_core, :wand_spec
 
-  validates_uniqueness_of :name, :email, :tumblr, :facebook, :twitter, :real_name
+  # validates_uniqueness_of :name, :email, :tumblr, :facebook, :twitter, :real_name
   validates_presence_of   :name, :email
   validates_length_of     :name, :minimum => 6
 
