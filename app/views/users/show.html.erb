@@ -1,64 +1,64 @@
 <% present @user do |user_presenter| %>
-<%= link_to "Edit Profile", edit_user_path(@user), :class => "big button edit", :style => "float:right;" if has_permission? %>
-<div class="clearfix"></div>
+	<%= link_to "Edit Profile", edit_user_path(@user), :class => "big button edit", :style => "float:right;" if has_permission? %>
+	<div class="clearfix"></div>
 
-<div id="profile">
-	<div id="account">
-		<div id="house" class=<%= @user.house.to_s %>>
-		<%= user_presenter.house %>
-		</div>
-		<div id="name">			
-			<p><%= @user.name %></p>
-		</div>
-		<div id="house-points">
-			<%= user_presenter.house_points %>
+	<div id="profile">
+		<div id="account" class=<%= @user.house.to_s %>>
+			<div id="house" class=<%= @user.house.to_s %>>
+			<%= user_presenter.house %>
+			</div>
+			<div id="name">			
+				<p><%= @user.name %></p>
+			</div>
+			<div id="house-points">
+				<%= user_presenter.house_points %>
+			</div>
+			<div class="clearfix"></div>
+			<div id="icon">
+				<%= user_presenter.pet %>
+			</div>
 		</div>
 		<div class="clearfix"></div>
-		<div id="icon">
-			<%= user_presenter.pet %>
+		<div id="social">
+		    <h2>Muggle Contact Links</h2>
+		    <hr>
+		    <div id="links">
+			    <ul>
+						<li><%= user_presenter.link "twitter"  %><br/><span class="desc">twitter</span></li>
+						<li><%= user_presenter.link "tumblr"   %><br/><span class="desc">tumblr</span></li>
+						<li><%= user_presenter.link "facebook" %><br/><span class="desc">facebook</span></li>
+					</ul>
+					<div class="clearfix"></div>
+					<ul>
+						<li><%=	user_presenter.link "aim"      %><br/><span class="desc">aim</span></li>
+						<li><%= user_presenter.link "skype"    %><br/><span class="desc">skype</span></li>
+			    	<li><%= user_presenter.link "google_plus"   %><br/><span class="desc">google +</span></li>
+			 <!-- <li><%= user_presenter.link "youtube"  %><br/><span class="desc">youtube</span></li>-->
+				    </ul>
+				    <div class="clearfix"></div>
+					<ul>	
+				    <li><%= user_presenter.email %><br/><span class="desc">email</span></li>
+				    <li><%= user_presenter.site  %><br/><span class="desc">site</span></li>
+				    <li><%= user_presenter.site2 %><br/><span class="desc">site</span></li>
+				  </ul>
+			  <div class="clearfix"></div>
+		    </div>
 		</div>
+
+		<div id="wand">
+			<h2>Wand</h2>
+			<hr>
+			<%=  user_presenter.wand "tree"   %>
+			<p> with </p>
+			<%=  user_presenter.wand "core"   %><br/>
+			<%=  user_presenter.wand "length", "  Inches Long," %> 
+			<p> and </p> 
+			<%=  user_presenter.wand "spec" %>
+			<%= render :partial => "home/share" %>
+		</div>
+		<div class="clearfix"></div>
+
+
+
 	</div>
-	<div class="clearfix"></div>
-	<div id="social">
-	    <h2>Muggle Contact Links</h2>
-	    <div id="links">
-		    <ul>
-				<li><%= user_presenter.twitter  %></li>
-				<li><%= user_presenter.tumblr   %></li>
-				<li><%= user_presenter.facebook %></li>
-			</ul>
-			<div class="clearfix"></div>
-			<ul>
-				<li><%=	user_presenter.aim      %></li>
-				<li><%= user_presenter.skype    %></li>
-		    	<li><%= link_to "" , "https://plus.google.com/#{@user.google_plus}/posts" , id: "google"   %></li>
-		    	<!-- <li><%= link_to "" , "http://youtube.com/#{@user.youtube.to_s}"      , id: "youtube"  %></li> -->
-		    </ul>
-		    <div class="clearfix"></div>
-			<ul>	
-		    	<li><%= link_to "" , "mailto:#{@user.email}" , id: "email", confirm: "Just to let you know. We cannot guarantee a death eater did not curse this link with computer viruses or Pr0n. Are you sure you trust this wizard?"    %></li>
-		    	<li><%= link_to "" , "#{@user.site}" , id: "site", confirm: "Just to let you know. We cannot guarantee a death eater did not curse this link with computer viruses or Pr0n. Are you sure you trust this wizard?"     %></li>
-		    	<li><%= link_to "" , "#{@user.site2}" , id: "site", confirm: "Just to let you know. We cannot guarantee a death eater did not curse this link with computer viruses or Pr0n. Are you sure you trust this wizard?"     %></li>
-		    </ul>
-		    <div class="clearfix"></div>
-	    </div>
-	</div>
-
-	<div id="wand">
-		<h2>Wand</h2>
-		<hr>
-		<%=  user_presenter.wand_tree   %>
-		<p> with </p>
-		<%=  user_presenter.wand_core   %>
-		<%=  user_presenter.wand_length %> 
-		<p> and </p> 
-		<%=  user_presenter.wand_spec %>
-		<%= render :partial => "home/share" %>
-	</div>
-	<div class="clearfix"></div>
-
-
-
-</div>
-<%= link_to 'Back', users_path, :class => "button" %>
 <% end %>

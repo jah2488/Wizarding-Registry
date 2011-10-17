@@ -22,55 +22,61 @@ class UserPresenter
   	end
   end
 
-  def wand_tree
-    handle_none @user.wand_tree do
-    	h.content_tag :span, "#{@user.wand_tree}"
-    end
-  end
-  def wand_core
-    handle_none @user.wand_core do
-    	h.content_tag :span, "#{@user.wand_core}"
-    end
-  end
-  def wand_length
-    handle_none @user.wand_length do
-    	h.content_tag :span, "#{@user.wand_length}  Inches Long,"
-    end
-  end
-  def wand_spec
-    handle_none @user.wand_spec do
-    	h.content_tag :span, "#{@user.wand_spec}"
+  def wand(type, args="")
+    handle_none eval("@user.wand_#{type}") do
+      h.content_tag :span, "#{eval("@user.wand_#{type}")} #{args}", class: "wand-text"
     end
   end
 
-  def twitter
-    handle_link "twitter", @user.twitter do
-      h.link_to "", "http://twitter.com/#{@user.twitter}", id: "twitter"
+  def link(type)
+    type = type
+    url  = ""
+    case type
+    when "twitter"
+      url = "http://twitter.com/#{@user.twitter}"
+    when "facebook"
+      url = "http://facebook.com/#{@user.facebook.to_s}"
+    when "tumblr"
+      url = "http://#{@user.tumblr}.tumblr.com"
+    when "aim"
+      url = "aim:goim?screenname=#{@user.aim.to_s}"
+    when "skype"
+      url = "skype:#{@user.skype.to_s}?chat"
+    when "google"
+      url = "https://plus.google.com/#{@user.google_plus}/posts"
+    when "youtube"
+      url = "http://youtube.com/#{@user.youtube.to_s}"
+    when "email"
+      url = "mailto:#{@user.email}"
+    when "site"
+      url = "#{@user.site}"
+    when "site2"
+      url = "#{@user.site2}"
+    end
+    link_handler(type, url)
+  end
+
+  def link_handler(type, url)
+    handle_link "#{type}", eval("@user.#{type}") do
+      h.link_to "", url, id: "#{type}"    end
+  end
+
+  def email
+    handle_link "email", @user.email do
+      h.link_to "", "mailto:#{@user.email}" , id: "email", confirm: "Just to let you know. We cannot guarantee a death eater did not curse this link with computer viruses or Pr0n. Are you sure you trust this wizard?"   
     end
   end
 
-  def tumblr
-  	handle_link "tumblr", @user.tumblr do
-  	  h.link_to "" , "http://#{@user.tumblr}.tumblr.com", id: "tumblr"
-  	end
+  def site
+    handle_link "site", @user.site do
+      h.link_to "" , "#{@user.site}" , id: "site", confirm: "Just to let you know. We cannot guarantee a death eater did not curse this link with computer viruses or Pr0n. Are you sure you trust this wizard?"
+    end
   end
 
-  def facebook
-  	handle_link "facebook", @user.facebook do
-  	  h.link_to "" , "http://facebook.com/#{@user.facebook.to_s}", id: "facebook"
-  	end	
-  end
-
-  def aim
-  	handle_link "aim", @user.aim do
-  	  h.link_to "" , "aim:goim?screenname=#{@user.aim.to_s}", id: "aim"
-  	end
-  end
-
-  def skype
-  	handle_link "skype", @user.skype do
-  	  h.link_to "" , "skype:#{@user.skype.to_s}?chat", id: "skype"
-  	end
+  def site2
+    handle_link "site", @user.site2 do
+      h.link_to "" , "#{@user.site2}" , id: "site", confirm: "Just to let you know. We cannot guarantee a death eater did not curse this link with computer viruses or Pr0n. Are you sure you trust this wizard?"
+    end
   end
 
 private

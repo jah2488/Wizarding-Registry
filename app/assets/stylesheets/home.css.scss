@@ -8,6 +8,19 @@
   height:70%;
 }
 
+#beta {
+  background: none repeat scroll 0 0 #FF9197;
+  border: 1px dotted #FCF5AE;
+  color: #822328;
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  width: 95px;
+  -webkit-transform: rotate(-45deg); 
+  -moz-transform: rotate(-45deg); 
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+}
+
 #title{
     background: none repeat scroll 0 0 #E5DCAA;
     border: 2px solid #FCF5AE;
@@ -17,6 +30,8 @@
     margin: 0 auto;
     text-align: center;
     width: 70%;
+    padding: 12px;
+    overflow:hidden;
 }
 
 #title h1{
