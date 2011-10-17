@@ -5,7 +5,16 @@
 </div>
 <section>
   <div id="search">
-    <div class="instruction">Find a fellow wizard<br/>(Search by Pottermore Name or Email)</div>
+    <div class="instruction">Find a fellow wizard (Search by   
+      <div class="text-container" style="inline">
+        <div class="slide-1 slide-first">Pottermore Name)</div>
+        <div class="slide-2 slide-text">Nickname)</div> 
+        <div class="slide-3 slide-text">Tumblr)</div>
+        <div class="slide-4 slide-text">Facebook)</div>
+        <div class="slide-5 slide-text">Twitter)</div>
+        <div class="slide-6 slide-text">Email)</div>
+      </div>
+    </div>
 		<%= form_tag search_path, :method => :get do %>
 		  <p>
 		    <%= text_field_tag :search, params[:search], :placeholder => "PatronusBlade141", :id => "teh_search" %>
@@ -39,6 +48,7 @@
       <div class="sign-up">
 	  <%= simple_form_for @user, :validate => true do |f| %>
 	  	<div class="inputs">
+        <%= f.input :real_name, placeholder: "Your Real Name or Nickname", label: "Muggle Name" %>
 	      <%= f.input :name, :placeholder => "Your Pottermore Name",                  :class => "input name"     %>
 	      <%= f.input :email, :placeholder => "Your Email",                           :class => "input email"    %>
 	      <%= f.input :password, :placeholder => "A good password",                   :class => "input password" %>

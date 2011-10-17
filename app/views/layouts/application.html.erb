@@ -55,7 +55,6 @@
         <% flash.each do |key, value| -%>
           <div class="flash <%= key %>"><%= value %></div>
         <% end -%>
-        
         <nav>
           <div class="button-group">
             <%= link_to('Home', root_path, :class => "button primary") %>
@@ -76,7 +75,7 @@
         <div id="main">
           <%= yield %>
         </div>
-        
+    <div class="clearfix"></div>
         <footer>
             <%= link_to "About", about_path %>
             - 

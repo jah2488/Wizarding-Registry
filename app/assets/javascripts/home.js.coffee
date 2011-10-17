@@ -4,6 +4,41 @@
 
 $(document).ready ->
   
+  $('.slide-text').hide()
+
+  alert = $('.alert')
+  if alert.length > 0
+    alert.show().animate({height: alert.outerHeight()}, 200)
+    
+    `window.setTimeout(function() {
+      alert.slideUp();
+    }, 5000);`
+    
+  `(function($) {
+    rotate = function(node,itemCount) {
+      setTimeout(function() {
+        if(itemCount == node) {
+          var next = 1; 
+        } else {
+          var next = node+1;
+        }
+        
+        if(node == 1) {
+          var prev = itemCount; 
+        } else {
+          var prev = node-1;
+        }
+        $('.text-container div:nth-child('+prev+')').hide();
+        $('.text-container div:nth-child('+node+')').fadeIn(800);
+        rotate(next,itemCount);
+      },3000);
+    }
+  })(jQuery);
+  $(document).ready(function() {
+    rotate(2,$('.text-container > div').length);
+  });`
+
+
   $('.log-in').hide()
   $('.sign-up').hide()
 

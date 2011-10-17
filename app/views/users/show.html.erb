@@ -1,5 +1,5 @@
 <% present @user do |user_presenter| %>
-	<%= link_to "Edit Profile", edit_user_path(@user), :class => "big button edit", :style => "float:right;" if has_permission? %>
+	<%= link_to "Edit Profile", edit_user_path(@user), :class => "big button  edit primary" if has_permission? %>
 	<div class="clearfix"></div>
 
 	<div id="profile">

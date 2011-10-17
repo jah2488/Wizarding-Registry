@@ -37,6 +37,9 @@
 #title h1{
   color: #363425;
 }
+form {
+  margin-top:10px;
+}
 
 section {
   text-align: center;
@@ -63,6 +66,7 @@ section {
     padding-left: 4px;
     position: relative;
     text-align: left;
+    margin-bottom:10px;
 }
 #search form{
   // margin-top: 8%;
