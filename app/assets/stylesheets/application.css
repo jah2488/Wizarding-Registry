@@ -177,6 +177,10 @@ a:hover { color: #036; }
  * Author: Justin Herrick
  */
 
+body{
+  background: repeat url("subtle_orange_emboss.png");
+}
+
 input {
   width:200px;
   margin-left:5px;
@@ -303,8 +307,10 @@ h1{
   vertical-align:middle;
   width:  768px;
   height: 1024px;
-  background: none repeat scroll 0 0 #FFFFFF;
-  border: 1px solid black;
+  background:repeat scroll 0 0 url("subtle_freckles.png");
+  border: 2px solid #999;
+  box-shadow: 2px 2px 6px #333;
+  border-radius: 2px;
 }
 
 
