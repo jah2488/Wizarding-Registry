@@ -202,12 +202,15 @@ input[type="checkbox"] {
 .flash {
   
 }
-
-.flash .notice {
+ .message {
   color: green;
   font-weight:bold;
 }
-.flash .error  {
+ .notice {
+  color: green;
+  font-weight:bold;
+}
+ .error  {
   color: red;
 }
 
