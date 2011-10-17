@@ -36,7 +36,7 @@
 		<%= simple_form_for(@user, :url => session_path(@user)) do |f| %>
 		  <div class="inputs">
 		    <%= f.input :email, :required => false, :autofocus => true, :class => "input email"    %>
-		    <%= f.input :password, :required => false,                  :class => "input password" %>
+		    <%= f.input :password, :required => true,                  :class => "input password" %>
 		    <%= f.input :remember_me, :as => :boolean %>
  		  </div>
 		  <div class="actions">
@@ -46,7 +46,7 @@
       </div>
 
       <div class="sign-up">
-	  <%= simple_form_for @user, :validate => true do |f| %>
+	  <%= simple_form_for @user, :validate => false do |f| %>
 	  	<div class="inputs">
         <%= f.input :real_name, placeholder: "Your Real Name or Nickname", label: "Muggle Name" %>
 	      <%= f.input :name, :placeholder => "Your Pottermore Name",                  :class => "input name"     %>
