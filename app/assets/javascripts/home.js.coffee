@@ -6,12 +6,12 @@ $(document).ready ->
   
   $('.slide-text').hide()
 
-  alert = $('.alert')
-  if alert.length > 0
-    alert.show().animate({height: alert.outerHeight()}, 200)
+  flash = $('.flash')
+  if flash.length > 0
+    flash.show().animate({height: flash.outerHeight()}, 200)
     
     `window.setTimeout(function() {
-      alert.slideUp();
+      flash.slideUp();
     }, 5000);`
     
   `(function($) {
