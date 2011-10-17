@@ -68,6 +68,11 @@ hr:hover {
     top: -87px;
     width: 75px;
   }
+  .hpoints{
+    font-size: 10px;
+    position: relative;
+    top: -25px;
+  }
   #house {
     float: left;
     width: 107px;
@@ -227,5 +232,19 @@ hr:hover {
     font-size:16px;
     color: #777;
     text-shadow: 2px 2px 3px #DDD;
+  }
+}
+
+#edit-form {
+  margin: 0 auto;
+  width: 500px;
+  text-align:left;
+  h2{
+    text-align:center;
+  }
+  input{
+    margin-left:5px;
+    width: 100px;
+    height: 25px;
   }
 }
