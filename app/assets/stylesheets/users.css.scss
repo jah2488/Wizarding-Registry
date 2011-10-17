@@ -115,33 +115,57 @@
     padding-top: 50px;
     padding-left: 65px;
     &#twitter{
+      background: url("icons/twitter_active.png") 0 0 no-repeat;
+    }
+    &#twitter-disabled{
       background: url("icons/twitter_dark.png") 0 0 no-repeat;
     }
     &#tumblr{
+      background: url("icons/tumblr_active.png") 0 0 no-repeat;
+    }
+    &#tumblr-disabled{
       background: url("icons/tumblr_dark.png") 0 0 no-repeat;
     }
     &#facebook{
+      background: url("icons/facebook_active.png") 0 0 no-repeat;
+    }
+    &#facebook-disabled{
       background: url("icons/facebook_dark.png") 0 0 no-repeat;
     }
     &#aim{
+      background: url("icons/aim_active.png") 0 0 no-repeat;
+    }
+    &#aim-disabled{
       background: url("icons/aim_dark.png") 0 0 no-repeat;
     }
     &#skype{
+      background: url("icons/skype_active.png") 0 0 no-repeat;
+    }
+    &#skype-disabled{
       background: url("icons/skype_dark.png") 0 0 no-repeat;
     }
     &#google{
+      background: url("icons/google_active.png") 0 0 no-repeat;
+    }
+    &#google-disabled{
       background: url("icons/google_dark.png") 0 0 no-repeat;
     }
     &#youtube{
+      background: url("icons/youtube_active.png") 0 0 no-repeat;
+    }
+    &#youtube-disabled{
       background: url("icons/youtube_dark.png") 0 0 no-repeat;
     }
     &#email{
+      background: url("icons/vcard_active.png") 0 0 no-repeat;
+    }
+    &#email-disabled{
       background: url("icons/vcard_dark.png") 0 0 no-repeat;
     }
     &#site{
-      background: url("icons/netvibes_dark.png") 0 0 no-repeat;
+      background: url("icons/netvibes_active.png") 0 0 no-repeat;
     }
-    &#site2{
+    &#site-disabled{
       background: url("icons/netvibes_dark.png") 0 0 no-repeat;
     }
   }
