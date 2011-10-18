@@ -42,7 +42,7 @@ class UserPresenter
       url = "aim:goim?screenname=#{@user.aim.to_s}"
     when "skype"
       url = "skype:#{@user.skype.to_s}?chat"
-    when "google"
+    when "google_plus"
       url = "https://plus.google.com/#{@user.google_plus}/posts"
     when "youtube"
       url = "http://youtube.com/#{@user.youtube.to_s}"
