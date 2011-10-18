@@ -81,6 +81,7 @@ GEM
       ruby_parser (~> 2.0.5)
     mime-types (1.16)
     multi_json (1.0.3)
+    newrelic_rpm (3.2.0)
     orm_adapter (0.0.5)
     pg (0.11.0)
     polyglot (0.3.2)
@@ -171,6 +172,7 @@ DEPENDENCIES
   heroku
   high_voltage
   jquery-rails
+  newrelic_rpm
   pg
   pry
   rails (= 3.1.0)
