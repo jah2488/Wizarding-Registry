@@ -44,6 +44,14 @@ form {
 section {
   text-align: center;
 }
+.input {
+    border: 0 solid black;
+    margin: 2px 0 2px 12px;
+    width: 280px;
+}
+.inputs{
+  border: 1px black solid;
+}
 
 #search{
   margin: 0 auto;
