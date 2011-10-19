@@ -12,7 +12,7 @@ $(document).ready ->
     
     `window.setTimeout(function() {
       flash.slideUp();
-    }, 5000);`
+    }, 3000);`
     
   `(function($) {
     rotate = function(node,itemCount) {
