@@ -8,7 +8,7 @@
 			<%= user_presenter.house %>
 			</div>
 			<div id="name">			
-				<p><%= @user.name %></p>
+				<p><%= link_to @user.name, "http://www.pottermore.com/en-us/friends/add/#{@user.name}" %></p>
 			</div>
 			<div id="house-points">
 				<p class="hpoints">House Points</p>
