@@ -55,12 +55,12 @@ class UserPresenter
       h.link_to "", url, id: "#{type}"    
     end
   end
-  
+
   def site_link(type)
-    attribute = eval("@user.#{type}")
-    url = @user.attribute.gsub(/http:\/\//, "")
-    handle_link "#{attribute}", attribute  do
-      h.link_to "", "http://#{url}", id: attribute, confirm: "Just to let you know. We cannot guarantee a death eater did not curse this link with computer viruses or Pr0n. Are you sure you trust this wizard?"
+    link_type = eval("@user.#{type}")
+    url = link_type.gsub(/http:\/\//, "")
+    handle_link "#{type}", link_type  do
+      h.link_to "", "http://#{url}", id: "site", confirm: "Just to let you know. We cannot guarantee a death eater did not curse this link with computer viruses or Pr0n. Are you sure you trust this wizard?"
     end
   end
 
