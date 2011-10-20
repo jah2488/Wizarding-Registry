@@ -49,9 +49,9 @@ class UserPresenter
     when "email"
       url = "mailto:#{@user.email}"
     when "site"
-      url = @user.site.gsub(/http:\/\//, "")
+      url = @user.site.gsub(/http(.)\/\//, "")
     when "site2"
-      url = @user.site2.gsub(/http:\/\//, "")
+      url = @user.site2.gsub(/http(.)\/\//, "")
     end
     link_handler(type, url)
   end
