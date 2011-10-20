@@ -69,13 +69,13 @@ class UserPresenter
 
   def site
     handle_link "site", @user.site do
-      h.link_to "" , "#{@user.site}" , id: "site", confirm: "Just to let you know. We cannot guarantee a death eater did not curse this link with computer viruses or Pr0n. Are you sure you trust this wizard?"
+      h.link_to "" , "http://#{@user.site}" , id: "site", confirm: "Just to let you know. We cannot guarantee a death eater did not curse this link with computer viruses or Pr0n. Are you sure you trust this wizard?"
     end
   end
 
   def site2
     handle_link "site", @user.site2 do
-      h.link_to "" , "#{@user.site2}" , id: "site", confirm: "Just to let you know. We cannot guarantee a death eater did not curse this link with computer viruses or Pr0n. Are you sure you trust this wizard?"
+      h.link_to "" , "http://#{@user.site2}" , id: "site", confirm: "Just to let you know. We cannot guarantee a death eater did not curse this link with computer viruses or Pr0n. Are you sure you trust this wizard?"
     end
   end
 
