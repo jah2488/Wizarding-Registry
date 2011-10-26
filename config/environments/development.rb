@@ -43,5 +43,5 @@ end
     :domain             => 'gmail.com', #you can also use google.com
     :authentication     => :plain,
     :user_name          => 'JAH2488@gmail.com',
-    :password           => 'federated2@4'
+    :password           => ''
   }

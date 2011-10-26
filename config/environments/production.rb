@@ -69,9 +69,9 @@ end
     :enable_starttls_auto => true,  
     :address            => 'smtp.gmail.com',
     :port               => 587,
-    :tls                  => true,
+    :tls                => true,
     :domain             => 'gmail.com', #you can also use google.com
     :authentication     => :plain,
     :user_name          => 'JAH2488@gmail.com',
-    :password           => 'federated2@4'
+    :password           => ''
   }
